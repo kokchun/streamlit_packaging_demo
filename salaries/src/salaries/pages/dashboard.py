@@ -2,6 +2,7 @@ import streamlit as st
 from salaries.utils.helpers import get_salaries_df, read_textfile
 from salaries.utils.constants import MARKDOWN_PATH
 from salaries.components.kpis import avg_salary_usd_kpi
+from salaries.components.charts import top_avg_salaries_chart
 
 
 def dashboard_layout():
@@ -26,6 +27,7 @@ def dashboard_layout():
             avg_salary_usd_kpi(role, role)
 
 
+    top_avg_salaries_chart()
 
     # data scientist
     # machine learning engineer
