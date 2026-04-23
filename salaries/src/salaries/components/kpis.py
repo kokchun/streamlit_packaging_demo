@@ -5,7 +5,6 @@ import streamlit as st
 
 df = get_salaries_df()
 
-
 def avg_salary_usd_kpi(role, label):
     avg_salary = (
         duckdb.sql(f"""--sql

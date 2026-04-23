@@ -10,6 +10,9 @@ def dashboard_layout():
 
     # KPIs
     avg_salary_usd_kpi("data analyst", "Data analyst")
+    # data scientist
+    # machine learning engineer
+    # data engineer
 
 if __name__ == "__main__":
     dashboard_layout()
