@@ -8,6 +8,7 @@ def dashboard_layout():
     st.markdown(read_textfile(MARKDOWN_PATH / "salaries_dashboard_description.md"))
     st.dataframe(get_salaries_df())
 
+    # KPIs
 
 if __name__ == "__main__":
     dashboard_layout()
