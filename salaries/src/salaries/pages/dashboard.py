@@ -27,7 +27,7 @@ def dashboard_layout():
             avg_salary_usd_kpi(role, role)
 
 
-    top_avg_salaries_chart()
+    top_avg_salaries_chart(number_roles=8)
 
     # data scientist
     # machine learning engineer

@@ -17,5 +17,15 @@ df_top_avg_salaries = duckdb.sql("""--sql
 print(df_top_avg_salaries)
 
 
-def top_avg_salaries_chart():
-    st.bar_chart(df_top_avg_salaries, x="job_title", y="avg_salary_usd")
+def top_avg_salaries_chart(number_roles=5):
+    with st.container(border=True):
+        st.markdown("**Top average yearly salary in USD**")
+        st.bar_chart(
+            df_top_avg_salaries.head(number_roles),
+            x="job_title",
+            y="avg_salary_usd",
+            x_label="JOB TITLE",
+            y_label="AVERAGE SALARY USD",
+            horizontal=True,
+            sort="-avg_salary_usd",
+        )
