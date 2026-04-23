@@ -30,6 +30,7 @@ def top_avg_salaries_chart(number_roles=5):
             sort="-avg_salary_usd",
         )
 
+
 def filtered_table(job_title, experience_lvl):
-    dff = df.query("job_title == @job_title")
+    dff = df.query("job_title == @job_title and experience_level == @experience_lvl")
     st.dataframe(dff)
