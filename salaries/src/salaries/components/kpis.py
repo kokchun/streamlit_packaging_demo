@@ -20,8 +20,4 @@ def avg_salary_usd_kpi(role, label):
 
     st.metric(label = label, value=avg_salary["avg_salary_usd"])
 
-
-
-
-avg_salary_usd_kpi("data scientist")
 # %%
