@@ -9,6 +9,7 @@ def dashboard_layout():
     st.markdown(read_textfile(MARKDOWN_PATH / "salaries_dashboard_description.md"))
     st.dataframe(get_salaries_df())
 
+    st.markdown("**Yearly salaries in USD for different roles**")
     # KPIs
     roles = [
         "Data Scientist",
