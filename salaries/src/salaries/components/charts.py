@@ -29,3 +29,7 @@ def top_avg_salaries_chart(number_roles=5):
             horizontal=True,
             sort="-avg_salary_usd",
         )
+
+def filtered_table(job_title, experience_lvl):
+
+    st.dataframe(df)
