@@ -1,18 +1,27 @@
-#%%
+# %%
 from salaries.utils.helpers import get_salaries_df
 import duckdb
+import streamlit as st
 
 df = get_salaries_df()
 
-def avg_salary_usd_kpi(role):
-    avg_salary = duckdb.sql(f"""--sql
+
+def avg_salary_usd_kpi(role, label):
+    avg_salary = (
+        duckdb.sql(f"""--sql
         SELECT 
-            AVG(salary_in_usd) AS avg_salary_usd
+            ROUND(AVG(salary_in_usd),-3)::INT AS avg_salary_usd
         FROM df
         WHERE job_title ILIKE '{role}'
-    """).df()
+    """)
+        .df()
+        .iloc[0]
+    )
 
-    return avg_salary
+    st.metric(label = label, value=avg_salary["avg_salary_usd"])
+
+
+
 
 avg_salary_usd_kpi("data scientist")
 # %%
