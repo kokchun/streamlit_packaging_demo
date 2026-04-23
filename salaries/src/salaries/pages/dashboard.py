@@ -3,7 +3,7 @@ from salaries.utils.helpers import get_salaries_df, read_textfile
 from salaries.utils.constants import MARKDOWN_PATH
 from salaries.components.kpis import avg_salary_usd_kpi
 from salaries.components.charts import top_avg_salaries_chart
-
+from salaries.components.filters import job_title_filter
 
 def dashboard_layout():
     st.markdown("# Salaries dashboard")
@@ -27,12 +27,10 @@ def dashboard_layout():
             avg_salary_usd_kpi(role, role)
 
 
-    top_avg_salaries_chart(number_roles=8)
+    top_avg_salaries_chart(number_roles=10)
 
-    # data scientist
-    # machine learning engineer
-    # data engineer
-
+    job_title = job_title_filter()
+    st.markdown(job_title)
 
 if __name__ == "__main__":
     dashboard_layout()
