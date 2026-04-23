@@ -4,6 +4,9 @@ import pandas as pd
 
 df = pd.read_csv(DATA_PATH / "salaries.csv")
 
-st.markdown("# RAW DATA")
+def raw_data():
+    st.markdown("# RAW DATA")
+    st.dataframe(df)
 
-st.dataframe(df)
+if __name__ == "__main__":
+    raw_data()
