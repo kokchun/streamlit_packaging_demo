@@ -19,3 +19,6 @@ salaries = "salaries:main"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.setuptools.packages.find]
+where = ["src"]
