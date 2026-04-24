@@ -13,5 +13,5 @@ def get_salaries_df():
 def read_css(path):
     css = read_textfile(path)
     st.write(
-        f"<style>{css}</style>"
+        f"<style>{css}</style>", unsafe_allow_html=True
     )
